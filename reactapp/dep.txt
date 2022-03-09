@@ -1,0 +1,5 @@
+npm install --save uid
+npm install --save react-toastify
+npm install react-router-dom@6
+npm install @reduxjs/toolkit
+npm install react-redux
