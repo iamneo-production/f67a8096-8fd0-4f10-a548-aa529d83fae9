@@ -1,0 +1,11 @@
+.search-bar>.view-change {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.search-bar>.view-change .material-icons {
+    vertical-align: bottom;
+    padding-left: 5px;
+    cursor: pointer;
+}
