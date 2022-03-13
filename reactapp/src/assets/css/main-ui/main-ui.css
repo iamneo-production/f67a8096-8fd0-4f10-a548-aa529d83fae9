@@ -1,0 +1,21 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main-ui {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(218, 216, 216);
+}
+
+.window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  overflow: hidden;
+}
