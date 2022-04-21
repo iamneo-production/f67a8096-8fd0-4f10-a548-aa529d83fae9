@@ -1,0 +1,10 @@
+@import "./list-card-display-media-query.css";
+@import "./list-card-display-image.css";
+
+.view-display-card-list.display-card>.card {
+    flex-direction: row !important;
+}
+
+.view-display-card-list.display-card .details .sec.one>.level.one>.item.two {
+    -webkit-line-clamp: 2 !important;
+}

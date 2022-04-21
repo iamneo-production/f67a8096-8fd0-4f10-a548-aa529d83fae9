@@ -1,0 +1,179 @@
+@import './display-card-badge.css';
+
+.display-card .material-icons {
+    vertical-align: bottom;
+}
+
+.display-card {
+    width: 100%;
+    --card-color: rgb(197, 231, 215);
+}
+
+.display-card>.card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    text-align: start;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0px;
+    border-radius: 5px;
+    background-color: var(--card-color);
+    position: relative;
+}
+
+.display-card>.card>.card-body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 16px;
+    background-color: var(--card-color);
+}
+
+.display-card .details {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.display-card .details>.sec.one {
+    width: 100%;
+    max-height: 63%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+}
+
+.display-card .details .sec.one>.level.one {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.display-card .details .sec.one>.level.one>.item.one {
+    font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.display-card .details .sec.one>.level.one>.item.one .bread-crumb {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 13px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.max-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.display-card .details .sec.one>.level.one>.item.two {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.display-card .details>.sec.two {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.display-card .details>.sec.two>.level.one .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.display-card .details>.sec.two>.level.one .item .item-value {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-card .details>.sec.two>.level.two .item-value {
+    margin-top: -1px;
+}
+
+.display-card .details>.sec.two>.level.two>.item.one .material-icons {
+    font-size: 23px;
+    color: goldenrod;
+    text-shadow: 2px 2px 2px rgba(199, 175, 37, 0);
+}
+
+.display-card .details>.sec.two>.level.one {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.display-card .details>.sec.three {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.display-card .details>.sec.three>.level.one {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.display-card .details>.sec.three>.level.one {
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.display-card .details>.sec.three>.level.one .toolbar-item {
+    margin-left: 5px;
+}
+
+.display-card .details>.sec.three>.level.one .toolbar-item.two {
+    margin-right: 5px;
+}
+
+.display-card .details>.sec.three>.level.one .toolbar-item button {
+    padding: 5px 8px 5px 8px;
+    font-weight: 600;
+}
+
+.display-card .details>.sec.three>.level.one .toolbar-item.one button {
+    background-color: green;
+    box-shadow: none;
+}
+
+.display-card .details>.sec.three>.level.one .toolbar-item.two button {
+    background-color: red;
+    box-shadow: none;
+}

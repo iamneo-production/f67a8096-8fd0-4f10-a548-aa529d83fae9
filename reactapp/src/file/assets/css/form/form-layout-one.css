@@ -1,0 +1,150 @@
+/*add student, update student, enroll student*/
+.form-layout {
+    width: 80%;
+    height: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.741);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.form-layout .form-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form-layout .form-field .form-field-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-layout .form-field .form-field-left input {
+    margin-bottom: 60px;
+}
+
+.form-layout .form-field .form-field-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-top {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-top input {
+    margin-right: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-middle {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-middle input {
+    margin-right: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-bottom {
+    background-color: azure;
+    padding: 20px;
+}
+
+.form-layout .form-field .form-field-right .form-field-right-bottom span {
+    display: flex;
+}
+
+.form-layout input, .form-layout label {
+    width: 100%;
+    display: flex;
+}
+
+.form-layout input::placeholder {
+    color: #333;
+}
+
+.form-layout input {
+    color: #222;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.form-layout .form-field .form-field-right textarea {
+    width: 100%;
+    display: block;
+}
+
+.form-layout .form-field .form-field-right textarea::placeholder {
+    color: #333;
+}
+
+.form-layout .form-field .form-field-right textarea {
+    color: #222;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .form-layout {
+        height: 100%;
+    }
+
+    .form-layout .form-field {
+        flex-direction: column;
+    }
+
+    .form-layout .form-field .form-field-left input {
+        margin-bottom: 10px;
+    }
+
+    .form-layout .form-field .form-field-right {
+        margin-left: 0;
+    }
+
+    .form-layout .form-field .form-field-right .form-field-right-top {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    .form-layout .form-field-right-top input {
+        margin-right: 0px;
+    }
+
+    .form-layout .form-field .form-field-right .form-field-right-middle {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    .form-layout .form-field .form-field-right .form-field-right-middle input {
+        margin-right: 0px;
+    }
+
+    .form-layout .form-field .form-field-right .form-field-right-bottom {
+        background-color: transparent;
+        padding: 0px;
+    }
+
+    .form-layout .form-field .form-field-right .form-field-right-bottom span {
+        display: flex;
+        flex-direction: column;
+    }
+}

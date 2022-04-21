@@ -1,0 +1,51 @@
+@import "./card-display-details.css";
+
+@media (max-width: 330px) {
+    .view-display-card-list.display-card .details>.sec.two>.level.two .material-icons {
+        font-size: 20px !important;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .view-display-card-list.display-card .details .sec.one>.level.one>.item.one {
+        font-size: 16px;
+    }
+
+    .view-display-card-list.display-card .details .sec.one>.level.one>.item.two {
+        font-size: 16px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.two {
+        font-size: 15px;
+        padding-top: 12px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.two>.level.one {
+        padding-bottom: 5px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.two>.level.one .material-icons {
+        font-size: 22px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.two>.level.two .material-icons {
+        font-size: 20px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.two>.level.one .item {
+        flex-direction: column;
+    }
+
+    .view-display-card-list.display-card .details>.sec.three>.level.one .toolbar-item button {
+        padding: 5px 8px 5px 8px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .view-display-card-list.display-card .details>.sec.three>.level.one {
+        padding-top: 8px;
+        padding-bottom: 5px;
+    }
+
+}

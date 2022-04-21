@@ -1,0 +1,18 @@
+.display-card .display-card-badge {
+    position: absolute;
+    z-index: 9;
+    top: 0px;
+    left: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 12px;
+    background-color: rgb(11, 214, 102);
+}
+
+.display-card .display-card-badge.rejected {
+    background-color: rgb(233, 18, 10) !important;
+}
+
+.display-card .display-card-badge.inprocess {
+    background-color: rgba(56, 149, 236, 0.966) !important;
+}
