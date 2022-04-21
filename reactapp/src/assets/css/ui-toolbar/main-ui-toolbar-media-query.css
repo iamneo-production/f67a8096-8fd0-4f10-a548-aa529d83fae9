@@ -21,7 +21,7 @@
         height: 30px;
         justify-content: space-evenly;/**/
         align-items: flex-start;
-        padding-right: 3px;
+        margin-right: 3px;
     }
 
     .menu .menu-item {

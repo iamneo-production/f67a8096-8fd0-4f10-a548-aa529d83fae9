@@ -39,7 +39,10 @@ export default class SignUpAPI {
     let status = err['response'].status;
     let message = 'Unhandled Status Code in SignUpAPI';
 
-    if (status === 500) {
+    if (status === 409) {
+      message = err['response'].data.message;
+    }
+    else if (status === 500) {
       message = 'OOPS! Network Error';
     }
 

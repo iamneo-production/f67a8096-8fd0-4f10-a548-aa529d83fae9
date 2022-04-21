@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import signInHandler from '../../Handler/SignInHandler/SignInHandler.js';
 
@@ -11,28 +11,26 @@ import "assets/css/login.css";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import SignInError from "Handler/SignInHandler/SignInError.js";
-
-
+import Database from "database/Database";
+import UserDetailsAPI from "server/UserDetailsAPI/UersDetailsAPI.js";
 
 function SignIn(props) {
   let formRef = useRef(null);
 
   let navigate = useNavigate();
 
-  let mainStoreDispatch = useDispatch();
-
-  let userDetails = useSelector((state) => {
+  let state = useSelector((state) => {
     if (state) {
-      return state.userDetails;
+      return state;
     } else {
       return 'SignIn component: TokenStore is accessed using useSelector, state is null';
     }
   });
 
   useEffect(() => {
-    console.log('SignIn Component: state');
-    console.log(userDetails);
+    Database.getToken().then((token) => { console.log(token) });
   });
 
   let formDetails = () => {
@@ -44,19 +42,30 @@ function SignIn(props) {
     return credentials;
   }
 
-  let onSignInSuccess = (signInMsgPacket) => {
-    mainStoreDispatch({
-      type: 'userDetails',
-      payload: signInMsgPacket.payload
-    });
-    toast(signInMsgPacket.message);
+  let onSignInSuccess = async (signInMsgPacket) => {
+    try {
+      console.log(signInMsgPacket.payload.token);
+      await Database.setToken(signInMsgPacket.payload.token);
+      await Database.setCurrUserEmail(signInMsgPacket.payload.email);
+      let userDetailsRes = await UserDetailsAPI.fetch(signInMsgPacket.payload.email);
+      await Database.setUserId(userDetailsRes.payload.id);
+
+      if (userDetailsRes.payload.authority === 'NORMAL') {
+        setTimeout(() => { navigate('/user/academy'); }, 2000);
+      } else {
+        setTimeout(() => { navigate('/admin/academy'); }, 2000);
+      }
+      toast(signInMsgPacket.message);
+
+    } catch (err) {
+      toast('Opps! could not save credentials');
+    }
   }
 
 
   let onSubmit = async (event) => {
     event.preventDefault();
     event.stopPropagation();
-
     let credentials = formDetails();
 
     try {
@@ -76,7 +85,7 @@ function SignIn(props) {
 
   return (
     <>
-      <form id="loginForm" ref={formRef} onSubmit={onSubmit.bind(this)}>
+      <form id="loginForm" ref={formRef} onSubmit={onSubmit}>
         <h3 className="text-white">Login</h3>
         <div className="form-item">
           <div className="form-group">

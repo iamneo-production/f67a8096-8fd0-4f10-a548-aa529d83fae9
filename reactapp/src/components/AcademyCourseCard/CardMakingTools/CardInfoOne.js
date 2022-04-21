@@ -1,21 +1,25 @@
-//props: title & description
+//props: title & description,breadCrumb
 export default function CardInfoOne(props) {
 
     let title = () => {
+        let breadCrumb;
+        if (props.breadCrumb) {
+            breadCrumb = <div className='bread-crumb max-2-lines' onClick={props.breadCrumb.onClick}>{props.breadCrumb.crumb}/</div>
+        }
         return (
-            <div class="item one">
-                <b>{props.title}</b>
+            <div className="item one">
+                {(breadCrumb) ? breadCrumb : <></>}<b>{props.title}</b>
             </div>
         );
     };
 
     let description = () => {
-        return (<div class="item two">{props.description}</div>);
+        return (<div className="item two">{props.description}</div>);
     };
 
     return (
-        <section class="sec one">
-            <div class="level one">
+        <section className="sec one">
+            <div className="level one">
                 {title()}
                 {description()}
             </div>

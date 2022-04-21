@@ -23,7 +23,7 @@ export default class SignInAPI {
   }
 
   _createRequest() {
-    let req = axios.post(`${serverURL}/generate-token`, this._credentials);
+    let req = axios.post(`${serverURL}/user/signin`, this._credentials);
     return req;
   }
 

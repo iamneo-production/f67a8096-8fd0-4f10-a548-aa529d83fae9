@@ -91,7 +91,7 @@
     justify-content: flex-end;
     align-items: center;
     position: absolute;
-    padding-right: 50px;
+    margin-right: 60px;
     z-index: 10;
 }
 

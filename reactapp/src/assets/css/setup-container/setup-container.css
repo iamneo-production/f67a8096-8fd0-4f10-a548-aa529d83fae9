@@ -10,6 +10,14 @@
     position: relative;
 }
 
+.nothing-here {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
 .setup-container .hover-button {
     position: absolute;
     z-index: 10;

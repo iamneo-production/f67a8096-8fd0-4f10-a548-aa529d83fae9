@@ -1,0 +1,13 @@
+@import './form-layout-one.css';
+
+.form-layout.two {
+    width: 100%;
+    max-width: 50%;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .form-layout.two {
+        width: 100%;
+        max-width: 80%;
+    }
+}

@@ -1,53 +1,64 @@
-//props: fullCardId & duration & timing & strength & location & zipcode & rating
+//props: fullCardId & duration & timing & strength & location & cost & rating
 //rating can be zero
 export default function CardInfoTwo(props) {
     let duration = () => {
-        return (
-            <span class="item one">
-                <span class="material-icons">schedule</span>
-                <span class="item-value">{props.duration}</span>
-            </span>
-        );
+        if (props.duration) {
+            return (
+                <span class="item one">
+                    <span class="material-icons">schedule</span>
+                    <span class="item-value">{props.duration}</span>
+                </span>
+            );
+        }
+        return (<></>);
     };
 
     let timing = () => {
-        return (
-            <span class="item two">
-                <span class="material-icons">timelapse</span>
-                <span class="item-value">{props.timing}</span>
-            </span>
-        );
+        if (props.timing) {
+            return (
+                <span class="item two">
+                    <span class="material-icons">timelapse</span>
+                    <span class="item-value">{props.timing}</span>
+                </span>
+            );
+        }
+        return (<></>);
     };
 
     let peopleCount = () => {
-        return (
-            <span class="item three">
-                <span class="material-icons">people</span>
-                <span class="item-value">{props.strength}</span>
-            </span>
-        );
+        if (props.strength) {
+            return (
+                <span class="item three">
+                    <span class="material-icons">people</span>
+                    <span class="item-value">{props.strength}</span>
+                </span>
+            );
+        }
+        return (<></>);
     };
 
     let location = () => {
-        return (
-            <span class="item four">
-                <span class="material-icons">place</span>
-                <span class="item-value">{props.location}</span>
-            </span>
-        );
+        if (props.location) {
+            return (
+                <span class="item four">
+                    <span class="material-icons">place</span>
+                    <span class="item-value">{props.location}</span>
+                </span>
+            );
+        }
+        return (<></>);
     }
 
-    let zipcode = () => {
-        return (
-            <span class="item five">
-                <span class="material-icons mx-1">
-                    <img class="material-icons"
-                        src="https://img.icons8.com/dotty/80/000000/mailbox-with-letter.png" alt="Zipcode"
-                        style={{ 'width': '22px', 'height': '22px' }} />
+    let cost = () => {
+        if (props.cost) {
+            return (
+                <span class="item five">
+                    <span class="material-icons">currency_rupee</span>
+                    <span class="item-value">{props.cost}</span>
                 </span>
-                <span class="item-value">{props.zipcode}</span>
-            </span>
-        );
+            );
+        }
+        return (<></>);
     }
 
     let ratingStars = () => {
@@ -89,7 +100,7 @@ export default function CardInfoTwo(props) {
                 {timing()}
                 {peopleCount()}
                 {location()}
-                {zipcode()}
+                {cost()}
             </div>
             <div class="row justify-content-center level two">
                 <span class="col-auto item one">

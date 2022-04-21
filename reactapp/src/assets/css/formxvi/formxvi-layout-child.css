@@ -1,0 +1,16 @@
+.formxvi-container.child {
+    margin: 5px;
+}
+
+.formxvi-container.child .formxvi-layout.child {
+    width: 95%;
+}
+
+.formxvi-container.child .formxvi-layout.child .card {
+    background-color: gainsboro;
+}
+
+.formxvi-container.child .formxvi-layout.child .card .card-body .card-title {
+    font-size: 18px;
+    text-align: center;
+}

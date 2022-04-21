@@ -69,6 +69,23 @@
     padding-bottom: 5px;
 }
 
+.display-card .details .sec.one>.level.one>.item.one .bread-crumb {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 13px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.max-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 .display-card .details .sec.one>.level.one>.item.two {
     display: -webkit-box;
     -webkit-line-clamp: 4;
