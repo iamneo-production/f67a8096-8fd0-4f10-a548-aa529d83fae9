@@ -1,4 +1,4 @@
-package com.springboot.demo.controller;
+package com.examly.springapp.controller;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.demo.model.Role;
-import com.springboot.demo.model.User;
-import com.springboot.demo.model.UserRole;
-import com.springboot.demo.service.UserService;
+import com.examly.springapp.model.Role;
+import com.examly.springapp.model.User;
+import com.examly.springapp.model.UserRole;
+import com.examly.springapp.service.UserService;
 
 @CrossOrigin("*")
 @RestController

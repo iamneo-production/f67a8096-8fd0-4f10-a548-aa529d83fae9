@@ -16,10 +16,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD:src/main/java/com/examly/springapp/controller/StudentController.java
 import com.examly.springapp.model.Student;
 import com.examly.springapp.service.StudentService;
+=======
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+>>>>>>> 41ec4664354f3aa14db9b096ce222db4f8f5d591:src/main/java/com/springboot/demo/controller/StudentController.java
 
 import java.util.List;
 
@@ -65,15 +72,16 @@ public class StudentController {
 		this.studentService.deleteStudent(studentId);
 	}
 
-	@GetMapping("/search/{keyword}")
-	public Set<Student> search(@PathVariable(value = "keyword", required = false) String keyword, Student student,
-			Model model) {
+	@GetMapping("/search")
+	public List<Object> search(@RequestParam String keyword) {
 		if (keyword.length() > 0) {
-			Set<Student> list = studentService.getByKeyword(keyword);
+			List<Object> list = studentService.getByKeyword(keyword);
+			list.add(0,
+					new Object[] { "userId", "courseId", "studentId", "firstName", "lastName", "mobileNumber",
+							"enrolledCourseName" });
 			return list;
 		} else {
-			Set<Student> list = studentService.getStudents();
-			return list;
+			return new ArrayList<Object>();
 		}
 	}
 

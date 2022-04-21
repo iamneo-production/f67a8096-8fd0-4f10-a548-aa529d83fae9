@@ -1,8 +1,9 @@
-package com.springboot.demo.service;
+package com.examly.springapp.service;
 
 import java.util.Set;
-import com.springboot.demo.model.User;
-import com.springboot.demo.model.UserRole;
+
+import com.examly.springapp.model.User;
+import com.examly.springapp.model.UserRole;
 
 public interface UserService {
     

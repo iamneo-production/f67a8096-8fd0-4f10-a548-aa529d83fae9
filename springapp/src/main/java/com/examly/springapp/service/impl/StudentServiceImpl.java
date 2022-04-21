@@ -1,6 +1,7 @@
 package com.examly.springapp.service.impl;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.EntityManager;
@@ -75,7 +76,7 @@ public class StudentServiceImpl implements StudentService{
 		
 	}
 	@Override
-	public Set<Student> getByKeyword(String keyword) {
+	public List<Object> getByKeyword(String keyword) {
 		// TODO Auto-generated method stub
 		return this.studentRepository.findByKeyword(keyword);
 	}

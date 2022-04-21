@@ -1,4 +1,4 @@
-package com.springboot.demo.model;
+package com.examly.springapp.model;
 
 
 import java.util.Collection;

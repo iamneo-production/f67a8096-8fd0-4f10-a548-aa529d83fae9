@@ -1,15 +1,16 @@
-package com.springboot.demo.service.impl;
+package com.examly.springapp.service.impl;
 
 import java.util.Set;
 
-import com.springboot.demo.exception.ResourceFoundException;
-import com.springboot.demo.model.User;
-import com.springboot.demo.model.UserRole;
-import com.springboot.demo.repo.RoleRepository;
-import com.springboot.demo.repo.UserRepository;
-import com.springboot.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.examly.springapp.exception.ResourceFoundException;
+import com.examly.springapp.model.User;
+import com.examly.springapp.model.UserRole;
+import com.examly.springapp.repo.RoleRepository;
+import com.examly.springapp.repo.UserRepository;
+import com.examly.springapp.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
