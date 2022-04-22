@@ -14,6 +14,28 @@ import Database from "database/Database";
 import StudentAPI from "server/StudentAPI/StudentAPI";
 
 
+export let applyCourse = async (sformat) => {
+    console.log(sformat);
+    let response = await CourseAPI.applyCourse(sformat);
+    console.log(response.message);
+    CardContainerNotifier.update();
+    return response;
+}
+
+export let serverFormatApplyCourse = (stuId, userId, courseId) => {
+    return {
+        course: {
+            courseId: `${courseId}`,
+        },
+        student: {
+            studentId: stuId,
+        },
+        user: {
+            id: userId,
+        }
+    }
+}
+
 
 
 export default function AdminAddStudent(props) {
@@ -26,6 +48,7 @@ export default function AdminAddStudent(props) {
 
     let inputIdOb = userDetailsFormFormat.student.add.input;
 
+
     let onFormSubmit = async (formState) => {
         console.log('AdminUpdateStudent: form data');
         console.log(formState);
@@ -34,11 +57,14 @@ export default function AdminAddStudent(props) {
         let addStudentPayload = await addStudent(serverFormatAddStudent(formState, userId));
         console.log(addStudentPayload);
         if (addStudentPayload) {
+            let response;
             if (addStudentPayload.studentId) {
-                await applyCourse(serverFormatApplyCourse(addStudentPayload.studentId, userId));
+                response = await applyCourse(serverFormatApplyCourse(addStudentPayload.studentId, userId, param.courseId));
             } else {
-                await applyCourse(serverFormatApplyCourse(addStudentPayload.id, userId));
+                response = await applyCourse(serverFormatApplyCourse(addStudentPayload.id, userId, param.courseId));
             }
+            navigate(-1);
+            toast(response.message);
         } else {
             toast('Please try again later!');
         }
@@ -66,19 +92,7 @@ export default function AdminAddStudent(props) {
 
     }
 
-    let serverFormatApplyCourse = (stuId, userId) => {
-        return {
-            course: {
-                courseId: `${param.courseId}`,
-            },
-            student: {
-                studentId: stuId,
-            },
-            user: {
-                id: userId,
-            }
-        }
-    }
+
 
     let addStudent = async (sformat) => {
         //console.log(sformat);
@@ -93,14 +107,7 @@ export default function AdminAddStudent(props) {
         return response.payload;
     }
 
-    let applyCourse = async (sformat) => {
-        console.log(sformat);
-        let response = await CourseAPI.applyCourse(sformat);
-        console.log(response.message);
-        CardContainerNotifier.update();
-        navigate(-1);
-        toast(response.message);
-    }
+
 
 
 

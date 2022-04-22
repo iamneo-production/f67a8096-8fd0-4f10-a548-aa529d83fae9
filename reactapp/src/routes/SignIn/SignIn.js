@@ -50,7 +50,7 @@ function SignIn(props) {
       let userDetailsRes = await UserDetailsAPI.fetch(signInMsgPacket.payload.email);
       await Database.setUserId(userDetailsRes.payload.id);
 
-      if (userDetailsRes.payload.authority === 'NORMAL') {
+      if (userDetailsRes.payload.authority.toLowerCase() === 'user') {
         setTimeout(() => { navigate('/user/academy'); }, 2000);
       } else {
         setTimeout(() => { navigate('/admin/academy'); }, 2000);
